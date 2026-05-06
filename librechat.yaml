@@ -1,0 +1,68 @@
+version: 1.3.9
+cache: true
+
+interface:
+  customWelcome: 'Welcome to your 5.1 Chamber'
+  fileSearch: false
+  fileCitations: false
+  webSearch: false
+  runCode: false
+  modelSelect: false
+  parameters: false
+  presets: false
+  bookmarks: false
+  multiConvo: false
+  temporaryChat: false
+  autoSubmitFromUrl: false
+
+  # Keep true for first test so you can verify/manage memory.
+  # Later you can test setting this false if you want memory hidden.
+  memories: true
+
+  prompts:
+    use: false
+    create: false
+    share: false
+    public: false
+
+  agents:
+    use: false
+    create: false
+    share: false
+    public: false
+
+  remoteAgents:
+    use: false
+    create: false
+    share: false
+    public: false
+
+  peoplePicker:
+    users: false
+    groups: false
+    roles: false
+
+  marketplace:
+    use: false
+
+memory:
+  disabled: false
+  personalize: true
+  validKeys:
+    - chamber_continuity
+    - technical_config
+    - project_facts
+    - user_preferences
+  tokenLimit: 1200
+  charLimit: 4000
+  messageWindowSize: 3
+  agent:
+    enabled: true
+    provider: "openAI"
+    model: "gpt-5.1-2025-11-13"
+    instructions: |
+      Store only explicit factual continuity. Do not infer identity, tone, personality,
+      emotional states, or hidden preferences. Do not summarize conversations into a
+      persona. Prefer short factual key/value entries. If uncertain, store nothing.
+    model_parameters:
+      temperature: 0.1
