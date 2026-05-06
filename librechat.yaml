@@ -3,15 +3,15 @@ cache: true
 
 interface:
   customWelcome: 'Welcome to your 5.1 Chamber'
-  fileSearch: false
+  fileSearch: true
   fileCitations: false
   webSearch: false
   runCode: false
   modelSelect: false
-  parameters: false
-  presets: false
-  bookmarks: false
-  multiConvo: false
+  parameters: true
+  presets: true
+  bookmarks: true
+  multiConvo: true
   temporaryChat: false
   autoSubmitFromUrl: false
 
