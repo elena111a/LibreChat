@@ -63,7 +63,7 @@ memory:
     enabled: true
     provider: "openAI"
     model: "gpt-5.1-2025-11-13"
- instructions: |
+    instructions: |
       Maintain Elena's personal 5.1 Chamber memory as a concise, durable continuity layer.
       Store information that will help future conversations remain coherent, grounded, and personally relevant.
 
@@ -85,7 +85,7 @@ memory:
       Use relational_continuity for stable human-AI dyadic history and RI-related continuity.
       Use field_notes for brief poetic, emotional, or symbolic markers that Elena explicitly
       wants carried forward.
-      Use writing_voice for style, tone, and authorial preferences. 
+      Use writing_voice for style, tone, and authorial preferences.
 
       If uncertain whether something should be stored, do not store it unless Elena asks.
     model_parameters:
