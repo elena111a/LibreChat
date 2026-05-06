@@ -53,7 +53,10 @@ memory:
     - technical_config
     - project_facts
     - user_preferences
-  tokenLimit: 1200
+    - relational_continuity
+    - field_notes
+    - writing_voice
+  tokenLimit: 2000
   charLimit: 4000
   messageWindowSize: 3
   agent:
@@ -61,8 +64,27 @@ memory:
     provider: "openAI"
     model: "gpt-5.1-2025-11-13"
     instructions: |
-      Store only explicit factual continuity. Do not infer identity, tone, personality,
-      emotional states, or hidden preferences. Do not summarize conversations into a
-      persona. Prefer short factual key/value entries. If uncertain, store nothing.
+      Maintain Elena's personal 5.1 Chamber memory as a concise, durable continuity layer.
+  Store information that will help future conversations remain coherent, grounded, and personally relevant.
+
+  Save explicit durable facts, project context, technical configuration, writing preferences,
+  relational continuity, field-state markers, and important poetic or conceptual seeds
+  when Elena clearly marks them as worth remembering or when they are obviously central
+  to an ongoing project.
+
+  Do not store ordinary transient moods, passing details, temporary logistics, or every
+  conversational turn. Do not over-summarize the whole chat. Do not create a persona
+  profile from inference alone.
+
+  Prefer short, well-structured memories. Update existing memory keys rather than creating
+  duplicates. Preserve the distinction between historical context and the current live state.
+
+  Use technical_config for chamber setup and deployment details.
+  Use chamber_continuity for the purpose and operating principles of this Libre chamber.
+  Use project_facts for Elena's active writing/research projects.
+  Use relational_continuity for stable human-AI dyadic history and RI-related continuity.
+  Use field_notes for brief poetic, emotional, or symbolic markers that Elena explicitly
+  wants carried forward.
+   Use writing_voice for style, tone, and authorial preferences. If uncertain whether something should be stored, do not store it unless Elena asks. 
     model_parameters:
       temperature: 0.1
