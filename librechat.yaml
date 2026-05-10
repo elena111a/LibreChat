@@ -7,7 +7,7 @@ interface:
   fileCitations: false
   webSearch: false
   runCode: false
-  modelSelect: false
+  modelSelect: true
   parameters: true
   presets: true
   bookmarks: true
