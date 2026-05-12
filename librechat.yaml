@@ -19,9 +19,15 @@ interface:
   # Later you can test setting this false if you want memory hidden.
   memories: true
 
+fileConfig:
+  endpoints:
+    images:
+      # This forces the app to use your volume path
+      path: "/app/uploads"
+      
   prompts:
-    use: true
-    create: true
+    use: false
+    create: false
     share: false
     public: false
 
