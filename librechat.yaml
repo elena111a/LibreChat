@@ -94,5 +94,4 @@ memory:
       Use writing_voice for style, tone, and authorial preferences.
 
       If uncertain whether something should be stored, do not store it unless Elena asks.
-    #model_parameters:
-      #temperature: 0.1
+  
