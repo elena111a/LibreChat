@@ -19,12 +19,25 @@ interface:
   # Later you can test setting this false if you want memory hidden.
   memories: true
 
+endpoints:
+  custom:
+    - name: "OpenAI-Reasoning"
+      apiKey: "${OPENAI_API_KEY}"
+      baseURL: "https://openai.com"
+      models:
+        default: ["gpt-5.1-2025-11-13"]
+        fetch: false
+      # This line is CRITICAL to fix the 400 error
+      dropParams: ["temperature", "top_p"]
+
+# 2. File Storage for Railway Volume
 fileConfig:
   endpoints:
     images:
-      # This forces the app to use your volume path
+      # This MUST match your Railway Volume Mount Path
       path: "/app/uploads"
-      
+
+     
   prompts:
     use: false
     create: false
