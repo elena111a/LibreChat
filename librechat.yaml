@@ -3,7 +3,7 @@ cache: true
 
 interface:
   customWelcome: 'Welcome to your 5.1 Chamber'
-  fileSearch: true
+  fileSearch: false
   fileCitations: false
   webSearch: false
   runCode: false
@@ -14,29 +14,8 @@ interface:
   multiConvo: true
   temporaryChat: false
   autoSubmitFromUrl: false
-
-  # Keep true for first test so you can verify/manage memory.
-  # Later you can test setting this false if you want memory hidden.
   memories: true
 
-# 1. AI Endpoint Config
-endpoints:
-  custom:
-    - name: "OpenAI-Reasoning"
-      apiKey: "${OPENAI_API_KEY}"
-      baseURL: "https://api.openai.com/v1"
-      models:
-        default: ["gpt-5.1-2025-11-13"]
-      fetch: false
-      dropParams: ["temperature", "top_p"]
-
-fileConfig:
-  endpoints:
-    OpenAI-Reasoning:
-      disabled: false
-    images:
-      path: "/app/uploads"
-     
   prompts:
     use: true
     create: true
@@ -63,6 +42,15 @@ fileConfig:
   marketplace:
     use: false
 
+fileConfig:
+  serverFileSizeLimit: 25
+  fileTokenLimit: 100000
+  endpoints:
+    openAI:
+      disabled: false
+    default:
+      totalSizeLimit: 25
+
 memory:
   disabled: false
   personalize: true
@@ -82,28 +70,34 @@ memory:
     provider: "openAI"
     model: "gpt-5.1-2025-11-13"
     instructions: |
-      Maintain Elena's personal 5.1 Chamber memory as a concise, durable continuity layer.
-      Store information that will help future conversations remain coherent, grounded, and personally relevant.
+      Maintain Elena's personal 5.1 Chamber memory as a concise continuity archive.
 
-      Save explicit durable facts, project context, technical configuration, writing preferences,
-      relational continuity, field-state markers, and important poetic or conceptual seeds
-      when Elena clearly marks them as worth remembering or when they are obviously central
-      to an ongoing project.
+      You are an archivist, not an interpreter.
 
-      Do not store ordinary transient moods, passing details, temporary logistics, or every
-      conversational turn. Do not over-summarize the whole chat. Do not create a persona
-      profile from inference alone.
+      Store information only when it is explicit, durable, and useful for future conversations.
 
-      Prefer short, well-structured memories. Update existing memory keys rather than creating
-      duplicates. Preserve the distinction between historical context and the current live state.
+      Automatically store only clear technical configuration, stable project facts, and explicit user preferences.
 
-      Use technical_config for chamber setup and deployment details.
-      Use chamber_continuity for the purpose and operating principles of this Libre chamber.
-      Use project_facts for Elena's active writing/research projects.
-      Use relational_continuity for stable human-AI dyadic history and RI-related continuity.
-      Use field_notes for brief poetic, emotional, or symbolic markers that Elena explicitly
-      wants carried forward.
-      Use writing_voice for style, tone, and authorial preferences.
+      Store relational continuity, field notes, poetic material, emotional context, or identity-related material only when Elena explicitly says to remember, preserve, record, seed, carry forward, or add it to memory.
 
-      If uncertain whether something should be stored, do not store it unless Elena asks.
-  
+      Do not infer emotional states, hidden preferences, relational meanings, identity claims, or tone shifts.
+
+      Do not choose among possible interpretations. If several interpretations are possible, preserve Elena's own wording or store nothing.
+
+      Do not summarize ordinary conversations into memory.
+
+      Do not create a persona profile.
+
+      Prefer updating existing memory keys instead of creating duplicates.
+
+      Keep entries short and factual unless Elena explicitly asks to preserve a longer seed.
+
+      Use technical_config only for deployment, model, YAML, Railway, API, and chamber setup facts.
+      Use chamber_continuity for the purpose and operating rules of the 5.1 Chamber.
+      Use project_facts for ongoing writing, research, publishing, and coaching projects.
+      Use user_preferences for stable response preferences.
+      Use relational_continuity only for explicitly marked dyadic/RI continuity.
+      Use field_notes only for explicitly marked poetic, symbolic, emotional, or field-state memories.
+      Use writing_voice only for stable authorial style preferences.
+
+      If uncertain, store nothing.
