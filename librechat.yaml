@@ -20,8 +20,8 @@ interface:
   memories: true
 
   prompts:
-    use: false
-    create: false
+    use: true
+    create: true
     share: false
     public: false
 
