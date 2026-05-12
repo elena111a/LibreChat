@@ -42,15 +42,6 @@ interface:
   marketplace:
     use: false
 
-fileConfig:
-  serverFileSizeLimit: 25
-  fileTokenLimit: 100000
-  endpoints:
-    openAI:
-      disabled: false
-    default:
-      totalSizeLimit: 25
-
 memory:
   disabled: false
   personalize: true
