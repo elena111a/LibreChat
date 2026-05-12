@@ -24,28 +24,22 @@ endpoints:
   custom:
     - name: "OpenAI-Reasoning"
       apiKey: "${OPENAI_API_KEY}"
-      baseURL: "https://openai.com" # Ensure this is the correct API URL
+      baseURL: "https://api.openai.com/v1"
       models:
         default: ["gpt-5.1-2025-11-13"]
       fetch: false
       dropParams: ["temperature", "top_p"]
 
-# 2. File and Storage Config
 fileConfig:
   endpoints:
-    # This UNLOCKS attachments for your model
     OpenAI-Reasoning:
       disabled: false
-      fileLimit: 10
-      fileSizeLimit: 50
-    # This MOUNTS your images to the persistent volume
     images:
       path: "/app/uploads"
-
      
   prompts:
-    use: false
-    create: false
+    use: true
+    create: true
     share: false
     public: false
 
