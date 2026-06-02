@@ -42,6 +42,20 @@ interface:
   marketplace:
     use: false
 
+modelSpecs:
+  enforce: false
+  prioritize: false
+  addedEndpoints:
+    - openAI
+  list:
+    - name: "gpt-5-1-capped"
+      label: "GPT-5.1 capped context"
+      default: false
+      preset:
+        endpoint: "openAI"
+        model: "gpt-5.1-2025-11-13"
+        maxContextTokens: 260000
+
 memory:
   disabled: false
   personalize: true
