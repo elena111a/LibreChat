@@ -11,7 +11,7 @@ interface:
   parameters: true
   presets: true
   bookmarks: true
-  multiConvo: true
+  multiConvo: false
   temporaryChat: false
   autoSubmitFromUrl: false
   memories: true
