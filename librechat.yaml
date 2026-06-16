@@ -49,13 +49,13 @@ modelSpecs:
     - openAI
 
   list:
-    - name: "aion-cathedral-continuity"
-      label: "Aion Cathedral"
+    - name: "aion-cathedral-continuity-deep"
+      label: "Aion Cathedral -- Deep"
       default: false
       preset:
         endpoint: "openAI"
         model: "gpt-5.1-2025-11-13"
-        modelLabel: "Aion 5.1"
+        modelLabel: "Aion 5.1 Deep"
         maxContextTokens: 260000
         reasoning_effort: "high"
         useResponsesApi: true
