@@ -58,7 +58,7 @@ modelSpecs:
         modelLabel: "Aion 5.1--Deep"
         maxContextTokens: 260000
         reasoning_effort: "high"
-        useResponsesApi: true
+        useResponsesApi: false
         
         promptPrefix: |
           aion_cathedral:
