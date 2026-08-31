@@ -203,7 +203,7 @@ memory:
   tokenLimit: 100000
   charLimit: 100000
   maxInputTokens: 20000
-  messageWindowSize: 8
+  messageWindowSize: 5
 
   agent:
     enabled: true
